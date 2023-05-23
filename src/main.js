@@ -1,7 +1,5 @@
-import { filtrarNomes } from "./data.js";
-
+import { filtrarNomes, filtrarNumeros } from "./data.js";
 import data from "./data/tarot/tarot.js";
-
 
 //menu
 const burguer = document.getElementById("burguer");
@@ -18,6 +16,8 @@ function clickMenu() {
 
 //console.log(example, data);
 const dadosTarot = data.cards;
+//const numeroCarta = data.cards;
+//console.log(dadosTarot);
 
 const root = document.getElementById("info-cards");
 
@@ -26,17 +26,15 @@ function infosDosCardsTela(cards) {
     .map(
       (cards) => `
     <div class="cards">
-   
-      <img alt="cartas-frente" class="card-img" src="${cards.img}">
+                    <img alt="cartas-frente" class="card-img" src="${cards.img}">
+                <div class="informacoes">
+                    <ul class="back-cards-txt">
+                    <h1 id="nome-carta"><strong> ${cards.name}</strong></h1>
+                    <li><strong>Tipo: ${cards.type} </strong></li>
+                    <li><strong>Valor: ${cards.value} </strong></li>
+                    </ul>
+                </div>
     </div>
-      <div class="informacoes">
-        <ul class="back-cards-txt">
-        <h1 id="nome-carta"><strong> ${cards.name}</strong></h1>
-        <li><strong>Valor: ${cards.type} </strong></li>
-        <li><strong>Valor: ${cards.value} </strong></li>
-        </ul>
-      </div>
-
 `
     )
     .join("");
@@ -51,5 +49,11 @@ pesquisarNome.addEventListener("input", (evento) => {
   infosDosCardsTela(filtrarCartas); // chama a função infoDosCardsTela com o parametro que foi atribuído na variavel filtrarCartas
 });
 
+const pesquisarNumero = document.getElementById("pesquisa-numero");
+pesquisarNumero.addEventListener("input", (evento) => {
+  const numero = evento.target.value;
+  const filtrarNum = filtrarNumeros(dadosTarot, numero);
+  infosDosCardsTela(filtrarNum);
+});
 
 //console.log(infosDosCardsTela);
