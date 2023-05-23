@@ -1,8 +1,9 @@
 import { filtrarNomes } from "./data.js";
-// import data from './data/lol/lol.js';
-import data from "./data/tarot/tarot.js";
-// import data from './data/rickandmorty/rickandmorty.js';
 
+import data from "./data/tarot/tarot.js";
+
+
+//menu
 const burguer = document.getElementById("burguer");
 burguer.addEventListener("click", clickMenu);
 function clickMenu() {
@@ -13,7 +14,7 @@ function clickMenu() {
     menu.style.display = "block";
   }
   //console.log(menuLista);
-};
+}
 
 //console.log(example, data);
 const dadosTarot = data.cards;
@@ -25,21 +26,17 @@ function infosDosCardsTela(cards) {
     .map(
       (cards) => `
     <div class="cards">
-        <div class="flip-container">
-            <div class="flipper">
-                <div class="front-cards-infos">
-                    <img alt="cartas-frente" class="card-img" src="${cards.img}">
-                </div>
-                <div class="back-cards-infos">
-                    <ul class="back-cards-txt">
-                    <h1 id="nome-carta"><strong> ${cards.name}</strong></h1>
-                    <li><strong>Tipo: ${cards.type} </strong></li>
-                    <li><strong>Valor: ${cards.value} </strong></li>
-                </div>
-            
-            </div>
-        </div>   
+   
+      <img alt="cartas-frente" class="card-img" src="${cards.img}">
     </div>
+      <div class="informacoes">
+        <ul class="back-cards-txt">
+        <h1 id="nome-carta"><strong> ${cards.name}</strong></h1>
+        <li><strong>Valor: ${cards.type} </strong></li>
+        <li><strong>Valor: ${cards.value} </strong></li>
+        </ul>
+      </div>
+
 `
     )
     .join("");
@@ -53,5 +50,6 @@ pesquisarNome.addEventListener("input", (evento) => {
   const filtrarCartas = filtrarNomes(dadosTarot, nomeDasCartas); // variável para chamar a função no data.js com os parametros dadosTarot e nomeDasCartas
   infosDosCardsTela(filtrarCartas); // chama a função infoDosCardsTela com o parametro que foi atribuído na variavel filtrarCartas
 });
+
 
 //console.log(infosDosCardsTela);
