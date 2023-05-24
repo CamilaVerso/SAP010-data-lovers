@@ -14,7 +14,7 @@ function clickMenu() {
   //console.log(menuLista);
 }
 
-//console.log(example, data);
+console.log(data);
 const dadosTarot = data.cards;
 //const numeroCarta = data.cards;
 //console.log(dadosTarot);
@@ -22,9 +22,7 @@ const dadosTarot = data.cards;
 const root = document.getElementById("info-cards");
 
 function infosDosCardsTela(cards) {
-  root.innerHTML = cards
-    .map(
-      (cards) => `
+  root.innerHTML = cards.map((cards) => `
     <div class="cards">
                     <img alt="cartas-frente" class="card-img" src="${cards.img}">
                 <div class="informacoes">
@@ -36,7 +34,7 @@ function infosDosCardsTela(cards) {
                 </div>
     </div>
 `
-    )
+  )
     .join("");
 }
 infosDosCardsTela(dadosTarot);
@@ -51,9 +49,13 @@ pesquisarNome.addEventListener("input", (evento) => {
 
 const pesquisarNumero = document.getElementById("pesquisa-numero");
 pesquisarNumero.addEventListener("input", (evento) => {
-  const numero = evento.target.value;
+  const numero = evento.target.valueAsNumber;
   const filtrarNum = filtrarNumeros(dadosTarot, numero);
+ 
+  //console.log(typeof evento.target.valueAsNumber);
   infosDosCardsTela(filtrarNum);
+
 });
 
-//console.log(infosDosCardsTela);
+
+console.log(filtrarNumeros);
