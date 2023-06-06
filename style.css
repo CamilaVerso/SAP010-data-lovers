@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #fff;
+    color: #333333;
+}
+
+header {
+    z-index: 2;
+    width: 100vw;
+    /* height: 300px; */
+    position: fixed;
+    right: 0%;
+    /* foi usado para ficar da largura da tela */
+    bottom: 93%;
+    padding-top: 10px;
+}
+
+menu {
+    display: none;
+}
+
+#menuLista {
+
+    background-color: rgba(143, 188, 143, 0.25);
+    margin: 0;
+    position: fixed;
+    font-weight: bold;
+    padding: 1em 0;
+    padding-left: 1em;
+}
+
+menu>ul>li>a {
+    color: #000;
+    text-decoration: none;
+    /* margin-bottom: 5px; */
+    font-size: 15px;
+}
+
+#burguer {
+    background: #8FBC8F;
+    display: flex;
+    cursor: pointer;
+    padding: 20px 0 10px 30px;
+    position: relative;
+    /* height: 4vh; */
+}
+
+
+/* .menuLista{
+    position:relative;
+    z-index: 10;
+} */
+
+
+
+
+.background {
+    background-color: rgba(181, 195, 166, 0.6);
+    position: relative;
+}
+
+.background::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-image: url(imagens/cartasEsquerda.jpg);
+	background-size: cover;
+	background-position: center;
+	z-index: -1;
+	opacity: 0.9;
+
+
+}
+
+.textoeinput {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#tituloT {
+    padding-top: 3em;
+    padding-left: 3em;
+    font-size: 3em;
+}
+
+#textoT {
+    padding-left: 3em;
+    text-indent: 2em;
+    display: flex;
+    position: relative;
+    padding-top: 3em;
+    font-weight: bold;
+    /* padding-top: 8em; */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    width: 180px;
+    position: relative;
+    right: 10%;
+    margin-bottom: 20px;
+    /* padding-top: 6em; */
+    /* left: 80%;
+    bottom: 80%; */
+}
+
+form>input {
+    border: none;
+    background-color: #B5C3A6;
+    height: 40px;
+    font-size: 16px;
+}
+
+form>select {
+    background-color: #B5C3A6;
+    height: 40px;
+    border: none;
+    font-size: 16px;
+}
+
+.calculo {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1em;
+    padding-bottom: 5px;
+    text-decoration: underline;
+}
+
+.container-card {
+    /* background-color: #7ac74c; */
+    display: flex;
+    flex-wrap: wrap;
+    /*essa propriedade colocamos no pai para conseguirmos mexer nos filhos*/
+    gap: 30px;
+    /*essa propriedade colocamos no pai para conseguirmos mexer nos filhos*/
+    justify-content: center;
+    padding-top: 50px;
+    background-color: #B5C3A6;
+
+}
+
+.card-img {
+    position: relative;
+    display: block;
+    text-align: center;
+    width: 150px;
+    height: auto;
+    margin: auto;
+}
+
+.cartao-cards {
+    /* background: #cc4d4d; */
+    width: 200px;
+    position: relative;
+    display: block;
+    text-align: center;
+    height: auto;
+    margin: auto;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+#nome {
+    margin: 1.5% 0;
+    display: block;
+    text-align: center;
+    align-items: center;
+
+}
+
+#valor {
+    margin: 0;
+    display: block;
+    text-align: center;
+    align-items: center;
+}
+
+#tipo {
+    margin: 1.5% 0;
+    display: block;
+    text-align: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.lista-cards {
+    /*background-color: #d8e3ec;*/
+    width: 290px;
+    height: auto;
+    padding: 15px;
+    display: flex;
+    /*por padrão ele alinha em linhas*/
+    flex-direction: column;
+    /*aqui ele vai alinhar em colunas*/
+    align-items: center;
+    /*alinha horizontalmente*/
+    gap: 15px;
+    /*transition: 0.2s ease-in-out;*/
+    /*efeito suave de entrada e saída, só vai funcionar se eu colocar o hoover*/
+    justify-content: center;
+    /* border: 2px solid #000000; */
+    border-radius: 6px;
+    /* background-color: darksalmon; */
+    align-self: self-start;
+    box-shadow: 3px 3px 4px black;
+}
+
+ul li {
+    list-style: none;
+    padding: 0;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 10px;
+    padding-inline-end: 10px;
+}
+
+/* .cartao-cards .informacoes p {
+    padding: 5px;
+    text-transform: uppercase;
+    font-size: 17px;
+    background: #8FBC8F;
+} */
+
+/*.cartao-cards  {
+    width: 90px;
+    height: 90px;
+}*/
+
+.cartao-cards .sign {
+    display: flex;
+    gap: 15px;
+}
+
+.sign {
+    border: 10px red;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.sign-up {
+    background-color:#B5C3A6;
+    /* border: 2px solid #000000;
+    border-radius: 3px; */
+    font-size: 14px;
+}
+
+.sign-rev {
+    background-color: #df67ddfb;
+    /* border: 2px solid #000000;
+    border-radius: 3px; */
+    font-size: 14px;
+}
+
+.descricao {
+    max-height: 80px;
+    overflow-y: scroll;
+    font-size: 14px;
+    padding-right: 10px;
+    text-align: start;
+}
+
+h2 {
+    font-size: 15px;
+}
+
+details>summary {
+    padding: 2px 6px;
+    width: 150px;
+    background-color: #8FBC8F;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 3px 3px 4px black;
+    cursor: pointer;
+    list-style: none;
+    height: 20px;
+    padding: 6px 6px;
+    line-height: 20px;
+}
+
+details .sumario {
+    border-radius: 0 10px 10px 10px;
+    background-color: #8FBC8F;
+    padding: 2px 6px;
+    margin: 0;
+    box-shadow: 3px 3px 4px black;
+}
+
+details {
+    width: 200px;
+}
