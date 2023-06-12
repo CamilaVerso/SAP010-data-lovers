@@ -48,7 +48,7 @@ menu>ul>li>a {
     display: flex;
     cursor: pointer;
     /* padding: 20px 0 10px 30px; */
-    padding: 5px 0 10px 20px;
+    padding: 10px;
     position: relative;
 }
 
@@ -124,7 +124,6 @@ form>label>input {
 #pesquisa-numero{
     width: 80px;
 }
-
 
 form>label>select {
     background-color: #B5C3A6;
@@ -300,6 +299,7 @@ footer {
 
 footer p a {
     text-decoration: none;
+    color: black;
 }
 
 
@@ -409,7 +409,7 @@ footer p a {
         justify-content: center;
         align-items: center;
         border: none;
-        padding: 3%;
+        padding: 3%; /* ajustar */
         right: 0.5%;
         font-size: smaller;
         /* align-items: stretch; */
