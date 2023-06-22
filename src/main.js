@@ -5,15 +5,16 @@ import {
   ordenaCartas,
 } from "./data.js";
 import data from "./data/tarot/tarot.js";
+import home from "./pages/home/index.js"
 
-const burguer = document.getElementById("burguer");
+const burguer = document.getElementById("burguer"); // pega o icone burguer pelo Id
 burguer.addEventListener("click", clickMenu);
 function clickMenu() {
   const menu = document.getElementById("menuLista");
-  if (menu.style.display === "block") {
+  if (menu.style.display === "block") { // se o menu estiver sendo exibido, quando for clicado fecha
     menu.style.display = "none";
   } else {
-    menu.style.display = "block";
+    menu.style.display = "block"; // se nao estiver sendo exibido, quando for clicado aparece
   }
 }
 
@@ -25,6 +26,15 @@ const select = document.getElementById("ordem");
 const selectArcano = document.getElementById("arcanos");
 const calculoTelaMajor = document.getElementById("calculo");
 const calculoTelaMinor = document.getElementById("calculo2");
+
+// SPA
+
+const main = document.querySelector("#conteudo");
+
+window.addEventListener("load", () => {
+  main.appendChild(home());
+});
+
 
 function infosDosCardsTela(cards) {
   root.innerHTML = cards
@@ -66,8 +76,8 @@ function infosDosCardsTela(cards) {
     )
     .join("");
 
- 
-}
+
+};
 
 infosDosCardsTela(dadosTarot);
 
@@ -126,3 +136,4 @@ const calculoMajor = (major * 100) / 78;
 
 const totalMajor = calculoMajor.toFixed(2);
 const totalMinor = calculoMinor.toFixed(2);
+
